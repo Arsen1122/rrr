@@ -33,13 +33,13 @@ public class FileValidationService {
             throw new IllegalArgumentException("Имя файла не может быть пустым");
         }
 
-        // Проверка по расширению файла
+
         String extension = getFileExtension(originalFilename).toLowerCase();
         if (!ALLOWED_EXTENSIONS.contains(extension)) {
             throw new IllegalArgumentException("Неправильный тип файла. Разрешены только: PNG, TXT, JSON");
         }
 
-        // Проверка по MIME типу (если доступен)
+
         if (contentType != null && !ALLOWED_CONTENT_TYPES.contains(contentType.toLowerCase())) {
             throw new IllegalArgumentException("Неправильный тип файла. Разрешены только: PNG, TXT, JSON");
         }

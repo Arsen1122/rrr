@@ -26,10 +26,10 @@ public class MinioService {
             InputStream inputStream = file.getInputStream();
             String contentType = file.getContentType();
 
-            // Создаем bucket если его нет
+
             createBucketIfNotExists();
 
-            // Загружаем файл в MinIO
+
             minioClient.putObject(
                     PutObjectArgs.builder()
                             .bucket(bucketName)

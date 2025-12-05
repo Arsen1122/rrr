@@ -27,10 +27,10 @@ public class FileController {
         Map<String, Object> response = new HashMap<>();
         
         try {
-            // Валидация файла
+
             fileValidationService.validateFile(file);
             
-            // Загрузка в MinIO
+
             String fileName = minioService.uploadFile(file);
             
             response.put("success", true);
